@@ -30,20 +30,27 @@
 </script>
 
 <style>
+/* Base */
 body {
   font-family:'Segoe UI',system-ui,-apple-system,Arial,sans-serif;
   background:#fffaf9;
   color:#3f2f2f;
+  line-height:1.6;
+  margin:0;
   overflow-x:hidden;
-  line-height:1.6
 }
+html, body { max-width:100%; }
+
+/* Theme colors */
 :root {
   --rose:#a14d5a;
   --rose-2:#c97b86;
   --petal:#f7e1e3;
   --cream:#fff8f6;
-  --ink:#3f2f2f
+  --ink:#3f2f2f;
 }
+
+/* Links + buttons */
 a{text-decoration:none}
 .btn-rose {
   background:var(--rose);
@@ -52,40 +59,45 @@ a{text-decoration:none}
   padding:.75rem 1.25rem;
   border:0;
 }
-.btn-rose:hover {
-  background:#8e3f4e;
-  color:#fff
-}
+.btn-rose:hover { background:#8e3f4e; color:#fff; }
+
 .shadow-soft{box-shadow:0 10px 30px rgba(0,0,0,.08)}
 .rounded-2xl{border-radius:1rem}
 .section-pad{padding:72px 0}
+
+/* Navbar */
+.navbar{background:var(--petal)}
 .navbar-brand {
   font-family:'Georgia','Times New Roman',serif;
   font-weight:700;
-  letter-spacing:.5px
+  letter-spacing:.5px;
+  color:var(--rose) !important;
 }
 .navbar-toggler{border:0}
 .navbar-toggler:focus{box-shadow:none}
+.nav-link{color:var(--ink) !important;font-weight:500}
+.nav-link.active,.nav-link:hover{color:var(--rose) !important}
+
+/* Hero */
 .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;position:relative}
 .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.35),rgba(0,0,0,.5))}
 .hero>.content{position:relative;z-index:1}
 .hero h1{font-family:'Georgia','Times New Roman',serif;font-size:clamp(2rem,5vw,3.5rem)}
 .hero p.lead{font-size:clamp(1rem,2.2vw,1.25rem)}
+
+/* Cards */
 .card{border:0;border-radius:1rem}
 .card-title{color:var(--rose)}
+
+/* Media */
 img,video{max-width:100%;height:auto;display:block}
 .img-cover{width:100%;height:260px;object-fit:cover;border-radius:12px}
+
+/* Timeline */
 .timeline{position:relative}
 .timeline::before{content:"";position:absolute;left:50%;top:0;bottom:0;width:2px;background:#ead2d6;transform:translateX(-50%)}
 .timeline-item{position:relative}
 .timeline-dot{width:14px;height:14px;border-radius:50%;background:var(--rose);position:absolute;left:50%;transform:translate(-50%,-50%);top:0}
-footer{background:var(--petal)}
-.social a{margin-right:.75rem}
-.maxw-700{max-width:700px}
-.no-overflow-x{overflow-x:hidden}
-.bg-cream{background:var(--cream)}
-.kicker{text-transform:uppercase;letter-spacing:.15em;color:var(--rose-2);font-weight:700;font-size:.85rem}
-:focus-visible{outline:3px solid var(--rose-2);outline-offset:2px}
 
 /* Responsive timeline */
 @media (max-width:991.98px){
@@ -94,16 +106,16 @@ footer{background:var(--petal)}
   .timeline-dot{left:20px;transform:none}
 }
 
-/* Navbar */
-.navbar{background:var(--petal)}
-.navbar-brand{color:var(--rose) !important}
-.nav-link{color:var(--ink) !important;font-weight:500}
-.nav-link.active,.nav-link:hover{color:var(--rose) !important}
+/* Footer */
+footer{background:var(--petal)}
+.social a{margin-right:.75rem}
+.maxw-700{max-width:700px}
+.bg-cream{background:var(--cream)}
+.kicker{text-transform:uppercase;letter-spacing:.15em;color:var(--rose-2);font-weight:700;font-size:.85rem}
+:focus-visible{outline:3px solid var(--rose-2);outline-offset:2px}
 
 /* Contact form fixes */
-form {
-  max-width:100%;
-}
+form {max-width:100%;}
 form .form-control,
 form textarea {
   width:100% !important;
@@ -115,10 +127,13 @@ form button {
   max-width:260px;
   width:100%;
 }
+
+/* Overflow fixes */
+.container, .row, .col {overflow-x:hidden;}
 </style>
 </head>
 
-<body class="no-overflow-x">
+<body>
 
 <nav class="navbar navbar-expand-lg" role="navigation" aria-label="Primary">
   <div class="container">
@@ -143,6 +158,7 @@ form button {
 <main class="section-pad">
   <div class="container">
     <div class="row g-5">
+      <!-- Contact Form -->
       <div class="col-lg-6" data-aos="fade-right">
         <h1 style="font-family:Georgia,serif;color:var(--rose)">Let’s create magic</h1>
         <p>Tell us your date, guest count, and vision. We’ll respond within 24 hours.</p>
@@ -184,6 +200,7 @@ form button {
         </script>
       </div>
 
+      <!-- Contact Info -->
       <div class="col-lg-6" data-aos="fade-left">
         <div class="card p-4 shadow-soft">
           <h5 class="card-title">Contact Details</h5>
